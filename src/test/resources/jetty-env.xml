@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+
+<Configure class="org.mortbay.jetty.webapp.WebAppContext">
+
+  <!-- Add an EnvEntry only valid for this webapp               -->
+  <New id="forwardUrl"  class="org.mortbay.jetty.plus.naming.EnvEntry">
+    <Arg>jira/soapUrl</Arg>
+    <Arg type="java.lang.String">http://build-atl/jira/rpc/soap/jirasoapservice-v2</Arg>
+    <Arg type="boolean">true</Arg>
+  </New>
+
+  <New id="username"  class="org.mortbay.jetty.plus.naming.EnvEntry">
+    <Arg>jira/username</Arg>
+    <Arg type="java.lang.String">rsom@certifydatasystems.com</Arg>
+    <Arg type="boolean">true</Arg>
+  </New>
+
+  <New id="password"  class="org.mortbay.jetty.plus.naming.EnvEntry">
+    <Arg>jira/password</Arg>
+    <Arg type="java.lang.String">system</Arg>
+    <Arg type="boolean">true</Arg>
+  </New>
+
+</Configure>

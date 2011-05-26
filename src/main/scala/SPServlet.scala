@@ -1,5 +1,8 @@
 import com.cds.jira._
+import java.net.URL
 import java.util.ArrayList
+import javax.naming.{Context, NamingException, InitialContext}
+import javax.servlet.{ServletException, ServletConfig}
 import org.apache.log4j.Logger
 import javax.servlet.http.{HttpServletResponse, HttpServletRequest, HttpServlet}
 
@@ -14,12 +17,37 @@ object SPServlet {
 class SPServlet extends HttpServlet {
   val logger = Logger.getLogger(classOf[SPServlet])
 
+  var soapUrl: String = null
+  var username: String = null
+  var password: String = null
+
+  override def init(config: ServletConfig) {
+    super.init(config)
+
+    try {
+      // Obtain our environment naming context
+      val initCtx = new InitialContext();
+      val envCtx = initCtx.lookup("java:comp/env").asInstanceOf[Context] ;
+
+      // Look up the forwardUrl
+      soapUrl = envCtx.lookup("jira/soapUrl").asInstanceOf[String];
+      username = envCtx.lookup("jira/username").asInstanceOf[String];
+      password = envCtx.lookup("jira/password").asInstanceOf[String];
+    } catch {
+      case e: NamingException =>
+      logger.error("Init failed", e);
+      throw new ServletException("Could not initialize servlet", e);
+    }
+
+  }
+
+
   override def doGet(req: HttpServletRequest, resp: HttpServletResponse) = {
 
     logger.debug("Request received: " + req.getParameterMap())
 
     val myService = new JiraSoapServiceServiceLocator()
-    val ss = myService.getJirasoapserviceV2()
+    val ss = myService.getJirasoapserviceV2(new URL(soapUrl))
     val token = getToken(req, ss)
 
     req.getParameter("f") match {
@@ -98,7 +126,7 @@ class SPServlet extends HttpServlet {
 
     if (req.getSession(true).getAttribute("token") == null) {
       logger.debug("Creating token")
-      val token = ss.login("rsom@certifydatasystems.com", "system")
+      val token = ss.login(username, password)
       req.getSession().setAttribute("token", token)
       logger.debug("Token created: " + token)
       token

@@ -109,6 +109,7 @@
           <scanIntervalSeconds>10</scanIntervalSeconds>
           <stopKey>foo</stopKey>
           <stopPort>9999</stopPort>
+          <jettyEnvXml>${basedir}/src/test/resources/jetty-env.xml</jettyEnvXml>
         </configuration>
       </plugin>
     </plugins>
