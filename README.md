@@ -25,7 +25,7 @@ Deployment
 ----------
 
 For deploying on Tomcat, place the war file at say /home/rahul/tomcat/
-Then create a file in
+Then create a file in /home/rahul/tomcat/conf/Catalina/localhost/savepostits-jira.xml
 
     <Context path="/savepostits-jira"
              docBase="/home/rahul/tomcat/savepostits-jira.war">
