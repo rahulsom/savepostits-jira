@@ -1,0 +1,118 @@
+/*
+ * UNPUBLISHED SOURCE CODE
+ *
+ * Copyright (c) 2011, Certify Data Systems, Incorporated.
+ * ALL RIGHTS RESERVED.
+ *
+ * Certify Data Systems HIGHLY CONFIDENTIAL TRADE SECRET INFORMATION
+ *
+ * Access or possession of this material grants you no right or license,
+ * express, implied, statutory or otherwise, under any Certify Data Systems
+ * patent, copyright, trade secret right or other intellectual property
+ * right. Any such license must be contained in a written license agreement
+ * signed by an authorized officer of Certify Data Systems. Additionally,
+ * access or possession of this material is limited to Certify Data Systems
+ * employees with a need to know or named employees of Certify Data Systems
+ * vendors authorized by Certify Data Systems in writing to access this
+ * material.
+ *
+ * Restricted Rights: Use, duplication, or disclosure by the U.S. Government
+ * is subject to restrictions of FAR 52.227-19 and its successors, or
+ * (c)(1)(ii) of the Rights in Technical Data and Computer Software clause at
+ * DFAR 252.227-7013 and its successors.
+ *
+ * Certify Data Systems, Inc.,
+ * 560 S. Winchester Blvd, San Jose, CA 95128
+ */
+
+div#body {
+  min-height: 300px;
+}
+
+div.postit {
+  background-color: yellow;
+  height: 36px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-family: 'Permanent Marker', arial, serif;
+}
+
+h3 {
+  font-family: 'Permanent Marker', arial, serif;
+}
+
+div.Closed {
+  color: #888;
+}
+
+span.code0 {
+  background-color: #CAFEB8
+}
+
+span.code1 {
+  background-color: #CEF0FF
+}
+
+span.code2 {
+  background-color: #FFFFB5
+}
+
+span.code3 {
+  background-color: #EEBBEE
+}
+
+span.code4 {
+  background-color: #A5FEE3
+}
+
+span.code5 {
+  background-color: #EEBBEE
+}
+
+span.code6 {
+  background-color: #FFBBBB
+}
+
+span.code7 {
+  background-color: #EDBEFE
+}
+
+span.code8 {
+  background-color: #CAFEB8
+}
+
+span.code9 {
+  background-color: #CAFEB8
+}
+
+span.code10 {
+  background-color: #CAFEB8
+}
+
+span.code11 {
+  background-color: #CAFEB8
+}
+
+span.code12 {
+  background-color: #CAFEB8
+}
+
+span.code13 {
+  background-color: #CAFEB8
+}
+
+span.code14 {
+  background-color: #CAFEB8
+}
+
+span.code15 {
+  background-color: #CAFEB8
+}
+
+span.user {
+  font-family: 'Crafty Girls', cursive;
+  padding-left: 6px;
+  padding-right: 6px;
+}
